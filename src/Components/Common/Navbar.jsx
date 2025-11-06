@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaGlobe, FaChevronDown, FaRocket, FaPhone, FaBars, FaTimes } from 'react-icons/fa';
-import LogoImage from "../../assets/Images/logo.jpg"
+import LogoImage from "../../assets/Images/logo.png"
 
 const BusinessPortfolio = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -80,20 +80,19 @@ const BusinessPortfolio = () => {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 lg:h-20">
             
-            {/* Logo with Custom Image */}
+            {/* Logo with Full Width Custom Image */}
             <div 
-              className="flex items-center gap-3 cursor-pointer group"
+              className="flex items-center cursor-pointer group"
               onClick={() => handleNavClick('home')}
             >
-              <div className="relative w-11 h-11 rounded-xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-0.5">
+              <div className="relative h-10 w-32 sm:h-12 sm:w-40 lg:h-14 lg:w-48 rounded-lg overflow-hidden   transition-all duration-300 group-hover:-translate-y-0.5">
                 <img 
                   src={LogoImage} 
                   alt="BusinessPro Logo"
-                  className="w-[30rem] h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-out"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-out"></div>
               </div>
-              
             </div>
 
             {/* Desktop Navigation */}
@@ -225,96 +224,8 @@ const BusinessPortfolio = () => {
         </nav>
       </header>
 
-      {/* Hero Section */}
-      <section id="home" className="pt-24 lg:pt-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-white rounded-3xl shadow-xl p-8 lg:p-16 animate-fadeInUp">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-              Welcome to BusinessPro
-            </h1>
-            <p className="text-center text-gray-600 text-lg lg:text-xl mb-8 max-w-3xl mx-auto">
-              Transform your business with our innovative solutions and professional expertise
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button
-                onClick={() => handleNavClick('services')}
-                className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <FaRocket />
-                Get Started
-              </button>
-              <button
-                onClick={() => handleNavClick('contact')}
-                className="flex items-center gap-2 px-8 py-3 bg-white text-blue-500 rounded-full font-semibold border-2 border-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <FaPhone />
-                Contact Us
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+    
 
-      {/* Additional Sections for Demo */}
-      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Our Services</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {['Consulting', 'Development', 'Marketing'].map((service, index) => (
-              <div key={service} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center text-white text-2xl font-bold mb-4">
-                  {index + 1}
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{service}</h3>
-                <p className="text-gray-600">Professional {service.toLowerCase()} solutions tailored to your business needs.</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">About Us</h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            We are a team of dedicated professionals committed to delivering exceptional business solutions. 
-            With years of experience and a passion for innovation, we help businesses transform and thrive in the digital age.
-          </p>
-        </div>
-      </section>
-
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Contact Us</h2>
-          <div className="bg-white rounded-xl p-8 shadow-lg">
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-                />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-                />
-              </div>
-              <textarea
-                placeholder="Your Message"
-                rows="5"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-              ></textarea>
-              <button
-                type="submit"
-                className="w-full py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
 
       <style jsx>{`
         @keyframes fadeInUp {
