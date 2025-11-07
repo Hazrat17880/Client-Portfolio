@@ -7,9 +7,9 @@
   "dev": "vite",
   "build": "vite build",
   "preview": "vite preview",
-  "vercel-build": "npm install vite --force && vite build"
-}
-,
+  "vercel-build": "vite build"
+},
+
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.16",
     "@tailwindcss/vite": "^4.1.16",
